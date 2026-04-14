@@ -1,5 +1,11 @@
 import streamlit as st
 import pandas as pd
+from sklearn.preprocessing import StandardScaler, OrdinalEncoder
+from sklearn.impute import SimpleImputer
+from sklearn.pipeline import Pipeline
+from sklearn.compose import ColumnTransformer
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import FunctionTransformer
 
 import joblib
 model = joblib.load("new_model.pkl")

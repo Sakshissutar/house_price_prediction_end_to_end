@@ -1,8 +1,8 @@
 import streamlit as st
 import pandas as pd
-import pickle
 
-model = pickle.load(open("new_model.pkl","rb"))
+import joblib
+model = joblib.load("new_model.pkl")
 
 st.title("House Price Prediction")
 # Inputs

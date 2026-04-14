@@ -8,7 +8,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import FunctionTransformer
 
 def to_string_func(x):
-    return str(x)
+    return x.astype(str)
 
 import joblib
 model = joblib.load("new_model.pkl")
@@ -57,6 +57,16 @@ if st.button("Predict"):
     }
 
     df = pd.DataFrame([data])
+    numeric_cols = [
+    'kitchen_area','bath_area','other_area','extra_area',
+    'extra_area_count','year','ceil_height','floor_max',
+    'floor','total_area','bath_count','rooms_count'
+    ]
+
+    cat_cols = ['gas','hot_water','central_heating','extra_area_type_name','district_name']
+
+    df[numeric_cols] = df[numeric_cols].astype(float)
+    df[cat_cols] = df[cat_cols].astype(str)
 
     prediction = model.predict(df)
 

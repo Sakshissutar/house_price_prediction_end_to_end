@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import pickle
 
-model = pickle.load(open("fixed_model.pkl","rb"))
+model = pickle.load(open("new_model.pkl","rb"))
 
 st.title("House Price Prediction")
 # Inputs

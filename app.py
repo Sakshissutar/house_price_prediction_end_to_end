@@ -7,8 +7,12 @@ from sklearn.compose import ColumnTransformer
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import FunctionTransformer
 
+def to_string_func(x):
+    return str(x)
+
 import joblib
 model = joblib.load("new_model.pkl")
+
 
 st.title("House Price Prediction")
 # Inputs

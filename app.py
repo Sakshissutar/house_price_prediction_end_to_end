@@ -6,13 +6,15 @@ from sklearn.pipeline import Pipeline
 from sklearn.compose import ColumnTransformer
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import FunctionTransformer
-
+import joblib
 def to_string_func(x):
     return x.astype(str)
 
-import joblib
-model = joblib.load("new_model.pkl")
+@st.cache_resource
+def load_model():
+    return joblib.load("new_model.pkl")
 
+model = load_model()
 
 st.title("House Price Prediction")
 # Inputs

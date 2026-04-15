@@ -53,7 +53,7 @@ jobs:
         context: .
         file: ./Dockerfile
         push: true
-        tags: ${{ secrets.DOCKER_USERNAME }}/streamlit-app:latest
+        tags: ${{ secrets.DOCKER_USERNAME }}/stapp:latest
 
     - name: Image digest
       run: echo ${{ steps.build-and-publish.outputs.digest }}

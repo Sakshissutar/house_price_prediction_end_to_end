@@ -26,7 +26,7 @@ The project uses GitHub Actions for continuous integration and deployment:
 5. Container restarts automatically
 
 ### the app is live:
-http://13.51.150.222:8501/
+[http://13.51.150.222:8501/](http://13.49.238.196:8501/)
  
 ### the app is live on streamlit:
 https://housepricepredictionendtoend-xqp6dppcevpqpsooueknml.streamlit.app/

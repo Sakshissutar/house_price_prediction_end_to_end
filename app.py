@@ -38,7 +38,7 @@ extra_area_type_name = st.selectbox("extra_area_type_name", ["loggia", "balcony"
 district_name = st.selectbox("district_name", ["Moskovskij", "Nevskij","Kirovskij","Krasnoselskij","Vyborgskij","Centralnyj","Petrogradskij"])
 
 # Predict button
-if st.button("Predict Price"):
+if st.button("Predict"):
     data = {
         'kitchen_area': kitchen_area,
         'bath_area': bath_area,

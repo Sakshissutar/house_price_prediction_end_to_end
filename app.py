@@ -7,6 +7,7 @@ from sklearn.compose import ColumnTransformer
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import FunctionTransformer
 import joblib
+
 def to_string_func(x):
     return x.astype(str)
 
@@ -37,7 +38,7 @@ extra_area_type_name = st.selectbox("extra_area_type_name", ["loggia", "balcony"
 district_name = st.selectbox("district_name", ["Moskovskij", "Nevskij","Kirovskij","Krasnoselskij","Vyborgskij","Centralnyj","Petrogradskij"])
 
 # Predict button
-if st.button("Predict"):
+if st.button("Predict Price"):
     data = {
         'kitchen_area': kitchen_area,
         'bath_area': bath_area,

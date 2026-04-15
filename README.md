@@ -1,5 +1,6 @@
+# House Price Prediction - End-to-End ML Project with CI/CD
 
-### this projects helps to predict the house prices using user inputs
+## This project is an end-to-end machine learning application that predicts house prices based on various features. The project demonstrates the complete ML lifecycle including data processing, model training, deployment, and CI/CD automation using Docker and AWS EC2.
 
 ### deployment
 - Dockerized application
@@ -9,8 +10,20 @@
 ### used technologies
 - Python
 - Streamlit
-- Docker hub
+- Scikit-learn
+- Docker
+- GitHub Actions (CI/CD)
 - AWS EC2
+- 
+## CI/CD Pipeline
+
+The project uses GitHub Actions for continuous integration and deployment:
+
+1. Code pushed to GitHub
+2. Docker image is built
+3. Image pushed to Docker Hub
+4. EC2 instance pulls latest image
+5. Container restarts automatically
 
 ### the app is live:
 http://13.51.150.222:8501/

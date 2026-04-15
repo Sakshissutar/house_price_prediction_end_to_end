@@ -67,7 +67,7 @@ jobs:
         with:
           host: 13.51.150.222
           username: ec2-user
-          key: ${{secrets.EC2_SSH_KEY}
+          key: ${{secrets.EC2_SSH_KEY}}
           script:
             echo "Pull latest image from DockerHub"
             docker pull ${{ secrets.DOCKER_USERNAME}}/stapp:lates

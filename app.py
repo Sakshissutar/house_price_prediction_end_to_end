@@ -14,7 +14,7 @@ import joblib
 model = joblib.load("new_model.pkl")
 
 
-st.title("User House Price Prediction")
+st.title("User input House Price Prediction")
 # Inputs
 kitchen_area = st.number_input("kitchen_area")
 bath_area = st.number_input("bath_area")

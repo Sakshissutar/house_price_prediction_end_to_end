@@ -14,7 +14,7 @@
 - Docker
 - GitHub Actions (CI/CD)
 - AWS EC2
-- 
+  
 ## CI/CD Pipeline
 
 The project uses GitHub Actions for continuous integration and deployment:

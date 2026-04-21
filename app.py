@@ -61,13 +61,12 @@ if st.button("Predict Price",type="primary"):
 
     df = pd.DataFrame([data])
     numeric_cols = [
-    'Kitchenarea','Batharea','Otherarea','Extraarea',
-    'Extraareacount','Yearnumber','Ceilheight','Floormax',
-    'Floorcount','Totalarea','Bathcount','Roomscount'
+    'kitchen_area','bath_area','other_area','extra_area',
+    'extra_area_count','year','ceil_height','floor_max',
+    'floor','total_area','bath_count','rooms_count'
     ]
     
-
-    cat_cols = ['Gascount','Hotwater','Centralheating','Extraareatypename','Districtname']
+    cat_cols = ['gas','hot_water','central_heating','extra_area_type_name','district_name']
 
     df[numeric_cols] = df[numeric_cols].astype(float)
     df[cat_cols] = df[cat_cols].astype(str)

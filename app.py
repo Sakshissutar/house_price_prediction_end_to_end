@@ -61,9 +61,9 @@ if st.button("Predict Price",type="primary"):
 
     df = pd.DataFrame([data])
     numeric_cols = [
-    'kitchen_area','bath_area','other_area','extra_area',
-    'extra_area_count','year','ceil_height','floor_max',
-    'floor','total_area','bath_count','rooms_count'
+    'Kitchen area','Bath area','Other area','Extra area',
+    'Extra area count','Year','Ceil height','Floor max',
+    'Floor','Total area','Bath count','Rooms count'
     ]
     
 

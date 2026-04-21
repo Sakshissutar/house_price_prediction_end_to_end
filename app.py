@@ -19,18 +19,18 @@ model = load_model()
 
 st.title("input House Price Prediction")
 # Inputs
-kitchen_area = st.number_input("kitchen_area")
-bath_area = st.number_input("bath_area")
-other_area = st.number_input("other_area")
-extra_area = st.number_input("extra_area")
-extra_area_count = st.number_input("extra_area_count")
-year = st.number_input("year")
-ceil_height = st.number_input("ceil_height")
-floor_max = st.number_input("floor_max")
-floor = st.number_input("floor")
-total_area = st.number_input("total_area")
-bath_count = st.number_input("bath_count")
-rooms_count = st.number_input("rooms_count")
+kitchen_area = st.number_input("kitchen_area", value=0.0)
+bath_area = st.number_input("bath_area", value=0.0)
+other_area = st.number_input("other_area", value=0.0)
+extra_area = st.number_input("extra_area", value=0.0)
+extra_area_count = st.number_input("extra_area_count", value=0.0)
+year = st.number_input("year", value=0.0)
+ceil_height = st.number_input("ceil_height", value=0.0)
+floor_max = st.number_input("floor_max", value=0.0)
+floor = st.number_input("floor", value=0.0)
+total_area = st.number_input("total_area", value=0.0)
+bath_count = st.number_input("bath_count", value=0.0)
+rooms_count = st.number_input("rooms_count", value=0.0)
 gas = st.selectbox("Gas", ["Yes", "No"])
 hot_water = st.selectbox("hot_water", ["Yes", "No"])
 central_heating = st.selectbox("central_heating", ["Yes", "No"])
@@ -74,7 +74,7 @@ if st.button("Predict Price",type="primary"):
 
     prediction = model.predict(df)
 
-    if 0.00 or 0 in numeric_cols:
+    if 0.0 or 0 in numeric_cols:
         st.warning("all fields must be non-zero")
         st.stop()
 

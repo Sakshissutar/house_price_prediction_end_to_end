@@ -17,7 +17,7 @@ def load_model():
 
 model = load_model()
 
-st.title("House Price Prediction")
+st.title("ITMO House Price Prediction")
 # Inputs
 kitchen_area = st.number_input("Kitchen area", value=0.00, format="%.2f", step=0.01)
 bath_area = st.number_input("Bath area", value=0.00, format="%.2f", step=0.01)

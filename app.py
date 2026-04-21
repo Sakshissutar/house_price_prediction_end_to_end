@@ -17,7 +17,7 @@ def load_model():
 
 model = load_model()
 
-st.title("User House Price Prediction")
+st.title("input House Price Prediction")
 # Inputs
 kitchen_area = st.number_input("kitchen_area")
 bath_area = st.number_input("bath_area")

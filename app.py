@@ -24,7 +24,7 @@ bath_area = st.number_input("Bath area", value=0.00, format="%.2f", step=0.01)
 other_area = st.number_input("Other area", value=0.00, format="%.2f", step=0.01)
 extra_area = st.number_input("Extra area", value=0.00, format="%.2f", step=0.01)
 extra_area_count = st.number_input("Extra area count", value=0.00, format="%.2f", step=0.01)
-year_number = st.number_input("Year", value=0.00, format="%.2f", step=0.01)
+year = st.number_input("Year", value=0.00, format="%.2f", step=0.01)
 ceil_height = st.number_input("Ceil height", value=0.00, format="%.2f", step=0.01)
 floor_max = st.number_input("Floor max", value=0.00, format="%.2f", step=0.01)
 floor = st.number_input("Floor count", value=0.00, format="%.2f", step=0.01)
@@ -40,37 +40,37 @@ district_name = st.selectbox("District name", ["Moskovskij", "Nevskij","Kirovski
 # Predict button
 if st.button("Predict Price",type="primary"):
     data = {
-        'Kitchen area': kitchen_area,
-        'Bath area': bath_area,
-        'Other area': other_area,
-        'Extra area': extra_area,
-        'Extra area count': extra_area_count,
-        'Year': year_number,
-        'Ceil height': ceil_height,
-        'Floor max': floor_max,
-        'Floor count': floor,
-        'Total area': total_area,
-        'Bath count': bath_count,
-        'Rooms count': rooms_count,
-        'Gas count': gas,
-        'Hot water': hot_water,
-        'Central heating': central_heating,
-        'Extra area type name': extra_area_type_name,
-        'District name': district_name,
+        'kitchen_area': kitchen_area,
+        'bath_area': bath_area,
+        'other_area': other_area,
+        'extra_area': extra_area,
+        'extra_area_count': extra_area_count,
+        'year': year,
+        'ceil_height': ceil_height,
+        'floor_max': floor_max,
+        'floor': floor,
+        'total_area': total_area,
+        'bath_count': bath_count,
+        'rooms_count': rooms_count,
+        'gas': gas,
+        'hot_water': hot_water,
+        'central_heating': central_heating,
+        'extra_area_type_name': extra_area_type_name,
+        'district_name': district_name,
     }
 
     df = pd.DataFrame([data])
     numeric_cols = [
-    'Kitchen area','Bath area','Other area','Extra area',
-    'Extra area count','Year','Ceil height','Floor max',
-    'Floor count','Total area','Bath count','Rooms count'
+    'kitchen_area','bath_area','other_area','extra_area',
+    'extra_area_count','year','ceil_height','floor_max',
+    'floor','total_area','bath_count','rooms_count'
     ]
-    
+
     if any(data[col] == 0 for col in numeric_cols):
         st.warning("All numeric fields must be non-zero")
         st.stop()
     
-    cat_cols = ['Gas count','Hot water','Central heating','Extra area type name','District name']
+    cat_cols = ['gas','hot_water','central_heating','extra_area_type_name','district_name']
 
     df[numeric_cols] = df[numeric_cols].astype(float)
     df[cat_cols] = df[cat_cols].astype(str)

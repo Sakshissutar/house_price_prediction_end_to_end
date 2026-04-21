@@ -19,44 +19,44 @@ model = load_model()
 
 st.title("House Price Prediction")
 # Inputs
-kitchen_area = st.number_input("kitchen_area", value=0.00, format="%.2f", step=0.01)
-bath_area = st.number_input("bath_area", value=0.00, format="%.2f", step=0.01)
-other_area = st.number_input("other_area", value=0.00, format="%.2f", step=0.01)
-extra_area = st.number_input("extra_area", value=0.00, format="%.2f", step=0.01)
-extra_area_count = st.number_input("extra_area_count", value=0.00, format="%.2f", step=0.01)
-year = st.number_input("year", value=0.00, format="%.2f", step=0.01)
-ceil_height = st.number_input("ceil_height", value=0.00, format="%.2f", step=0.01)
-floor_max = st.number_input("floor_max", value=0.00, format="%.2f", step=0.01)
-floor = st.number_input("floor", value=0.00, format="%.2f", step=0.01)
-total_area = st.number_input("total_area", value=0.00, format="%.2f", step=0.01)
-bath_count = st.number_input("bath_count", value=0.00, format="%.2f", step=0.01)
-rooms_count = st.number_input("rooms_count", value=0.00, format="%.2f", step=0.01)
+kitchen_area = st.number_input("Kitchen area", value=0.00, format="%.2f", step=0.01)
+bath_area = st.number_input("Bath area", value=0.00, format="%.2f", step=0.01)
+other_area = st.number_input("Other area", value=0.00, format="%.2f", step=0.01)
+extra_area = st.number_input("Extra area", value=0.00, format="%.2f", step=0.01)
+extra_area_count = st.number_input("Extra area count", value=0.00, format="%.2f", step=0.01)
+year = st.number_input("Year", value=0.00, format="%.2f", step=0.01)
+ceil_height = st.number_input("Ceil height", value=0.00, format="%.2f", step=0.01)
+floor_max = st.number_input("Floor max", value=0.00, format="%.2f", step=0.01)
+floor = st.number_input("Floor", value=0.00, format="%.2f", step=0.01)
+total_area = st.number_input("Total area", value=0.00, format="%.2f", step=0.01)
+bath_count = st.number_input("Bath count", value=0.00, format="%.2f", step=0.01)
+rooms_count = st.number_input("Rooms count", value=0.00, format="%.2f", step=0.01)
 gas = st.selectbox("Gas", ["Yes", "No"])
-hot_water = st.selectbox("hot_water", ["Yes", "No"])
-central_heating = st.selectbox("central_heating", ["Yes", "No"])
-extra_area_type_name = st.selectbox("extra_area_type_name", ["loggia", "balcony"])
-district_name = st.selectbox("district_name", ["Moskovskij", "Nevskij","Kirovskij","Krasnoselskij","Vyborgskij","Centralnyj","Petrogradskij"])
+hot_water = st.selectbox("Hot water", ["Yes", "No"])
+central_heating = st.selectbox("Central heating", ["Yes", "No"])
+extra_area_type_name = st.selectbox("Extra area type name", ["loggia", "balcony"])
+district_name = st.selectbox("District name", ["Moskovskij", "Nevskij","Kirovskij","Krasnoselskij","Vyborgskij","Centralnyj","Petrogradskij"])
 
 # Predict button
 if st.button("Predict Price",type="primary"):
     data = {
-        'kitchen_area': kitchen_area,
-        'bath_area': bath_area,
-        'other_area': other_area,
-        'extra_area': extra_area,
-        'extra_area_count': extra_area_count,
-        'year': year,
-        'ceil_height': ceil_height,
-        'floor_max': floor_max,
-        'floor': floor,
-        'total_area': total_area,
-        'bath_count': bath_count,
-        'rooms_count': rooms_count,
-        'gas': gas,
-        'hot_water': hot_water,
-        'central_heating': central_heating,
-        'extra_area_type_name': extra_area_type_name,
-        'district_name': district_name,
+        'Kitchen area': kitchen_area,
+        'Bath area': bath_area,
+        'Other area': other_area,
+        'Extra area': extra_area,
+        'Extra area count': extra_area_count,
+        'Year': year,
+        'Ceil height': ceil_height,
+        'Floor max': floor_max,
+        'Floor': floor,
+        'Total area': total_area,
+        'Bath count': bath_count,
+        'Rooms count': rooms_count,
+        'Gas': gas,
+        'Hot water': hot_water,
+        'Central heating': central_heating,
+        'Extra area type name': extra_area_type_name,
+        'District name': district_name,
     }
 
     df = pd.DataFrame([data])

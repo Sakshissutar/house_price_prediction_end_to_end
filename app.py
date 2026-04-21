@@ -67,7 +67,7 @@ if st.button("Predict Price",type="primary"):
     ]
     
 
-    cat_cols = ['gas','hot_water','central_heating','extra_area_type_name','district_name']
+    cat_cols = ['Gas','Hot water','Central heating','Extra area type name','District name']
 
     df[numeric_cols] = df[numeric_cols].astype(float)
     df[cat_cols] = df[cat_cols].astype(str)

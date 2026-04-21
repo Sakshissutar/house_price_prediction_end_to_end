@@ -40,34 +40,34 @@ district_name = st.selectbox("District name", ["Moskovskij", "Nevskij","Kirovski
 # Predict button
 if st.button("Predict Price",type="primary"):
     data = {
-        'Kitchen area': kitchen_area,
-        'Bath area': bath_area,
-        'Other area': other_area,
-        'Extra area': extra_area,
-        'Extra area count': extra_area_count,
-        'Year': year,
-        'Ceil height': ceil_height,
-        'Floor max': floor_max,
-        'Floor': floor,
-        'Total area': total_area,
-        'Bath count': bath_count,
-        'Rooms count': rooms_count,
-        'Gas': gas,
-        'Hot water': hot_water,
-        'Central heating': central_heating,
-        'Extra area type name': extra_area_type_name,
-        'District name': district_name,
+        'Kitchenarea': kitchen_area,
+        'Batharea': bath_area,
+        'Otherarea': other_area,
+        'Extraarea': extra_area,
+        'Extraareacount': extra_area_count,
+        'Yearnumber': year,
+        'Ceilheight': ceil_height,
+        'Floormax': floor_max,
+        'Floorcount': floor,
+        'Totalarea': total_area,
+        'Bathcount': bath_count,
+        'Roomscount': rooms_count,
+        'Gascount': gas,
+        'Hotwater': hot_water,
+        'Centralheating': central_heating,
+        'Extraareatypename': extra_area_type_name,
+        'Districtname': district_name,
     }
 
     df = pd.DataFrame([data])
     numeric_cols = [
-    'Kitchen area','Bath area','Other area','Extra area',
-    'Extra area count','Year','Ceil height','Floor max',
-    'Floor','Total area','Bath count','Rooms count'
+    'Kitchenarea','Batharea','Otherarea','Extraarea',
+    'Extraareacount','Yearnumber','Ceilheight','Floormax',
+    'Floorcount','Totalarea','Bathcount','Roomscount'
     ]
     
 
-    cat_cols = ['Gas','Hot water','Central heating','Extra area type name','District name']
+    cat_cols = ['Gascount','Hotwater','Centralheating','Extraareatypename','Districtname']
 
     df[numeric_cols] = df[numeric_cols].astype(float)
     df[cat_cols] = df[cat_cols].astype(str)

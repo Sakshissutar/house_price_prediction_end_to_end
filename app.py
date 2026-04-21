@@ -65,6 +65,7 @@ if st.button("Predict Price",type="primary"):
     'extra_area_count','year','ceil_height','floor_max',
     'floor','total_area','bath_count','rooms_count'
     ]
+    
 
     cat_cols = ['gas','hot_water','central_heating','extra_area_type_name','district_name']
 
@@ -72,5 +73,13 @@ if st.button("Predict Price",type="primary"):
     df[cat_cols] = df[cat_cols].astype(str)
 
     prediction = model.predict(df)
+    
+    values = []
+    for label in numeric_cols:
+        val = st.number_input(label, value=None, placeholder=0.0)
+        values.append(val)
 
-    st.success(f"Prediction: {prediction[0]}")
+    if any(v is None or v == 0 for v in values ):
+        st.warning("All fields must be non-zero")
+    else:
+        st.success(f"Prediction: {prediction[0]}")

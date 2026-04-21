@@ -74,12 +74,9 @@ if st.button("Predict Price",type="primary"):
 
     prediction = model.predict(df)
 
-    values = []
-    for label in numeric_cols:
-        val = st.number_input(label, value=None, placeholder=0.0)
-        values.append(val)
+    if 0.0 in numeric_cols:
+        st.warning("all fields must be non-zero")
+        st.stop()
 
-    if any(v is None or v == 0.0 for v in values ):
-        st.warning("All fields must be non-zero")
-    else:
-        st.success(f"Prediction: {prediction[0]}")
+
+    st.success(f"Prediction: {prediction[0]}")

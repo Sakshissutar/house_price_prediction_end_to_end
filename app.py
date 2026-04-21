@@ -66,6 +66,10 @@ if st.button("Predict Price",type="primary"):
     'Floor count','Total area','Bath count','Rooms count'
     ]
     
+    if any(data[col] == 0 for col in numeric_cols):
+        st.warning("All numeric fields must be non-zero")
+        st.stop()
+    
     cat_cols = ['Gas count','Hot water','Central heating','Extra area type name','District name']
 
     df[numeric_cols] = df[numeric_cols].astype(float)
@@ -73,14 +77,6 @@ if st.button("Predict Price",type="primary"):
 
     prediction = model.predict(df)
 
-    inputs = {}
-
-    for label in numeric_cols:
-        inputs[label] = st.number_input(label, value=0.00, format="%.2f")
-    
-    if 0.00 in inputs.values():
-        st.warning("All fields must be non-zero")
-        st.stop()
 
 
     st.success(f"Prediction: {prediction[0]}")

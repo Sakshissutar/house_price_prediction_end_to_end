@@ -17,7 +17,7 @@ def load_model():
 
 model = load_model()
 
-st.title("House Price Prediction")
+st.title("User House Price Prediction")
 # Inputs
 kitchen_area = st.number_input("kitchen_area")
 bath_area = st.number_input("bath_area")
@@ -73,13 +73,13 @@ if st.button("Predict Price",type="primary"):
     df[cat_cols] = df[cat_cols].astype(str)
 
     prediction = model.predict(df)
-    
+
     values = []
     for label in numeric_cols:
         val = st.number_input(label, value=None, placeholder=0.0)
         values.append(val)
 
-    if any(v is None or v == 0 for v in values ):
+    if any(v is None or v == 0.0 for v in values ):
         st.warning("All fields must be non-zero")
     else:
         st.success(f"Prediction: {prediction[0]}")

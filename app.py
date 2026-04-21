@@ -24,14 +24,14 @@ bath_area = st.number_input("Bath area", value=0.00, format="%.2f", step=0.01)
 other_area = st.number_input("Other area", value=0.00, format="%.2f", step=0.01)
 extra_area = st.number_input("Extra area", value=0.00, format="%.2f", step=0.01)
 extra_area_count = st.number_input("Extra area count", value=0.00, format="%.2f", step=0.01)
-year = st.number_input("Year", value=0.00, format="%.2f", step=0.01)
+year_number = st.number_input("Year", value=0.00, format="%.2f", step=0.01)
 ceil_height = st.number_input("Ceil height", value=0.00, format="%.2f", step=0.01)
 floor_max = st.number_input("Floor max", value=0.00, format="%.2f", step=0.01)
-floor = st.number_input("Floor", value=0.00, format="%.2f", step=0.01)
+floor = st.number_input("Floor count", value=0.00, format="%.2f", step=0.01)
 total_area = st.number_input("Total area", value=0.00, format="%.2f", step=0.01)
 bath_count = st.number_input("Bath count", value=0.00, format="%.2f", step=0.01)
 rooms_count = st.number_input("Rooms count", value=0.00, format="%.2f", step=0.01)
-gas = st.selectbox("Gas", ["Yes", "No"])
+gas = st.selectbox("Gas count", ["Yes", "No"])
 hot_water = st.selectbox("Hot water", ["Yes", "No"])
 central_heating = st.selectbox("Central heating", ["Yes", "No"])
 extra_area_type_name = st.selectbox("Extra area type name", ["loggia", "balcony"])
@@ -45,14 +45,14 @@ if st.button("Predict Price",type="primary"):
         'Other area': other_area,
         'Extra area': extra_area,
         'Extra area count': extra_area_count,
-        'Year': year,
+        'Year': year_number,
         'Ceil height': ceil_height,
         'Floor max': floor_max,
-        'Floor': floor,
+        'Floor count': floor,
         'Total area': total_area,
         'Bath count': bath_count,
         'Rooms count': rooms_count,
-        'Gas': gas,
+        'Gas count': gas,
         'Hot water': hot_water,
         'Central heating': central_heating,
         'Extra area type name': extra_area_type_name,
@@ -62,7 +62,7 @@ if st.button("Predict Price",type="primary"):
     df = pd.DataFrame([data])
     numeric_cols = [
     'kitchen_area','bath_area','other_area','extra_area',
-    'extra_area_count','year','ceil_height','floor_max',
+    'extra_area_count','year_number','ceil_height','floor_max',
     'floor','total_area','bath_count','rooms_count'
     ]
     

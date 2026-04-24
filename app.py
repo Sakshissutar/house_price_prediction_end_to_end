@@ -66,8 +66,8 @@ if st.button("Predict Price",type="primary"):
     'floor','total_area','bath_count','rooms_count'
     ]
 
-    if any(data[col] == 0 for col in numeric_cols):
-        st.warning("All numeric fields must be non-zero")
+    if any(data[col] <= 0 for col in numeric_cols):
+        st.warning("All fields must be non-zero and positive")
         st.stop()
     
     cat_cols = ['gas','hot_water','central_heating','extra_area_type_name','district_name']
